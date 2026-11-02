@@ -1,7 +1,6 @@
 package User;
 
 import java.util.LinkedList;
-import java.util.Objects;
 
 public class UserRepository {
 

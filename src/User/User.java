@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class User   {
 
-    private final int id;
+    private int id;
     private String firstName;
     private String lastName;
     private String address;
@@ -12,10 +12,10 @@ public class User   {
     private String password;
     private LinkedList<Integer> roleIDs;
 
-    public User(int id, String lastName, String firstName,
+    public User(String lastName, String firstName,
                 String password, String email, String address) {
 
-        this.id = id;
+        this.id = -1;
         this.lastName = lastName;
         this.firstName = firstName;
         this.roleIDs = new LinkedList<>();
@@ -26,6 +26,10 @@ public class User   {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
