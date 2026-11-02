@@ -7,7 +7,7 @@ public class UserRepository {
 
     LinkedList<User> userDB;
 
-    UserRepository() {
+    public UserRepository() {
         this.userDB = new LinkedList<>();
     }
 

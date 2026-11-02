@@ -6,7 +6,7 @@ public class ProductRepository {
 
     LinkedList<Product> productDB;
 
-    ProductRepository(){
+    public ProductRepository(){
 
         this.productDB = new LinkedList<>();
     }

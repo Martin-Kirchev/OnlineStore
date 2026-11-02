@@ -87,7 +87,7 @@ public class User   {
         }
     }
 
-    public boolean hasRole(int roleID) {
+    public boolean haveRole(int roleID) {
 
         int size = roleIDs.size();
 
