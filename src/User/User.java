@@ -12,13 +12,13 @@ public class User   {
     private String password;
     private LinkedList<Integer> roleIDs;
 
-    public User(int id, String lastName, String firstName, LinkedList<Integer> roleIDs,
+    public User(int id, String lastName, String firstName,
                 String password, String email, String address) {
 
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
-        this.roleIDs = roleIDs;
+        this.roleIDs = new LinkedList<>();
         this.password = password;
         this.email = email;
         this.address = address;
