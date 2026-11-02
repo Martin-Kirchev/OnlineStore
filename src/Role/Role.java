@@ -1,8 +1,8 @@
-package Roles;
+package Role;
 
 public class Role {
 
-    private int id;
+    private final int id;
     private String name;
 
     Role(int id, String name){
@@ -15,15 +15,11 @@ public class Role {
         return id;
     }
 
-    protected void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    protected void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 }

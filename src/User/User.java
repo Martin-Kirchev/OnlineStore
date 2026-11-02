@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class User   {
 
-    private int id;
+    private final int id;
     private String firstName;
     private String lastName;
     private String address;
@@ -24,24 +24,15 @@ public class User   {
         this.address = address;
     }
 
-    protected int getID(){
-
-        return this.id;
-    }
-
     public int getId() {
         return id;
-    }
-
-    protected void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    protected void setFirstName(String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
@@ -49,7 +40,7 @@ public class User   {
         return lastName;
     }
 
-    protected void setLastName(String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
@@ -57,7 +48,7 @@ public class User   {
         return address;
     }
 
-    protected void setAddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -65,7 +56,7 @@ public class User   {
         return email;
     }
 
-    protected void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
@@ -73,7 +64,7 @@ public class User   {
         return password;
     }
 
-    protected void setPassword(String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
