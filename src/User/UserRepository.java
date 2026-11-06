@@ -29,11 +29,11 @@ public class UserRepository {
         return null;
     }
 
-    public User findUserByName(String name) {
+    public User findUserByEmail(String email) {
 
         for(User user : userDB) {
 
-            if(user.getFirstName().equals(name))
+            if(user.getEmail().equals(email))
                 return user;
         }
 

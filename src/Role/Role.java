@@ -2,7 +2,7 @@ package Role;
 
 public class Role {
 
-    private final int id;
+    private int id;
     private String name;
 
     public Role(int id, String name){
@@ -13,6 +13,10 @@ public class Role {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

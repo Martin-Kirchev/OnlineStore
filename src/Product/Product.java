@@ -2,7 +2,7 @@ package Product;
 
 public class Product {
 
-    private final int id;
+    private int id;
     private String name;
     private String description;
 
@@ -15,6 +15,10 @@ public class Product {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

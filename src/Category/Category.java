@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Category {
 
-    private final int id;
+    private int id;
     private String name;
     private LinkedList<Integer> categoryIDs;
     private LinkedList<Integer> productIDs;
@@ -19,6 +19,10 @@ public class Category {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
