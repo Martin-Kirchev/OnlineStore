@@ -1,20 +1,21 @@
 package Category;
 
-import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Category {
 
     private int id;
     private String name;
-    private LinkedList<Integer> categoryIDs;
-    private LinkedList<Integer> productIDs;
+    private Set<Integer> innerCategoryIDs;
+    private Set<Integer> productIDs;
 
     public Category(int id, String name) {
 
         this.id = id;
         this.name = name;
-        this.categoryIDs = new LinkedList<>();
-        this.productIDs = new LinkedList<>();
+        this.innerCategoryIDs = new HashSet<>();
+        this.productIDs = new HashSet<>();
     }
 
     public int getId() {
@@ -33,68 +34,28 @@ public class Category {
         this.name = name;
     }
 
-    public void addInnerCategory(int categoryID) {
-
-        categoryIDs.add(categoryID);
+    public boolean addInnerCategory(int categoryID) {
+        return innerCategoryIDs.add(categoryID);
     }
 
-    public void removeInnerCategory(int categoryID) {
-
-        int size = categoryIDs.size();
-
-        for (int i = 0; i < size; i++) {
-
-            if(categoryIDs.get(i) == categoryID){
-
-                categoryIDs.remove(i);
-                return;
-            }
-        }
+    public boolean removeInnerCategory(int categoryID) {
+        return innerCategoryIDs.removeIf(id -> id == categoryID);
     }
 
     public boolean haveCategory(int categoryID) {
-
-        int size = categoryIDs.size();
-
-        for (Integer ID : categoryIDs) {
-
-            if (ID == categoryID)
-                return true;
-        }
-
-        return false;
+        return innerCategoryIDs.contains(categoryID);
     }
 
-    public void addProduct(int productID) {
-
-        productIDs.add(productID);
+    public boolean addProduct(int productID) {
+        return productIDs.add(productID);
     }
 
-    public void removeProduct(int productID) {
-
-        int size = productIDs.size();
-
-        for (int i = 0; i < size; i++) {
-
-            if(productIDs.get(i) == productID){
-
-                productIDs.remove(i);
-                return;
-            }
-        }
+    public boolean removeProduct(int productID) {
+        return productIDs.removeIf(id -> id == productID);
     }
 
     public boolean haveProduct(int productID) {
-
-        int size = productIDs.size();
-
-        for (Integer ID : productIDs) {
-
-            if (ID == productID)
-                return true;
-        }
-
-        return false;
+        return productIDs.contains(productID);
     }
 
 }
