@@ -10,34 +10,20 @@ public class UserRepository {
         this.userDB = new LinkedList<>();
     }
 
-    public void addUser(User user) {
-        userDB.add(user);
+    public boolean addUser(User user) {
+        return userDB.add(user);
     }
 
-    public void removeUser(User user) {
-        userDB.remove(user);
+    public boolean removeUser(int userId) {
+        return userDB.removeIf(user -> user.getId() == userId);
     }
 
     public User findUserById(int id) {
-
-        for(User user : userDB) {
-
-            if(user.getId() == id)
-                return user;
-        }
-
-        return null;
+        return userDB.stream().filter(user -> user.getId() == id).findFirst().orElse(null);
     }
 
     public User findUserByEmail(String email) {
-
-        for(User user : userDB) {
-
-            if(user.getEmail().equals(email))
-                return user;
-        }
-
-        return null;
+        return userDB.stream().filter(user -> user.getEmail().equals(email)).findFirst().orElse(null);
     }
 
 }
