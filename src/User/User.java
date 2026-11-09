@@ -1,6 +1,7 @@
 package User;
 
-import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class User   {
 
@@ -10,7 +11,7 @@ public class User   {
     private String address;
     private String email;
     private String password;
-    private LinkedList<Integer> roleIDs;
+    private Set<Integer> roleIDs;
 
     public User(String lastName, String firstName,
                 String password, String email, String address) {
@@ -18,7 +19,7 @@ public class User   {
         this.id = -1;
         this.lastName = lastName;
         this.firstName = firstName;
-        this.roleIDs = new LinkedList<>();
+        this.roleIDs = new HashSet<>();
         this.password = password;
         this.email = email;
         this.address = address;
@@ -72,33 +73,15 @@ public class User   {
         this.password = password;
     }
 
-    public void addRole(int roleID) {
-
-        roleIDs.add(roleID);
+    public boolean addRole(int roleID) {
+        return roleIDs.add(roleID);
     }
 
-    public void removeRole(int roleID) {
-
-        int size = roleIDs.size();
-
-        for (int i = 0; i < size; i++) {
-
-            if(roleIDs.get(i) == roleID){
-
-                roleIDs.remove(i);
-                return;
-            }
-        }
+    public boolean removeRole(int roleID) {
+        return roleIDs.removeIf(id -> id == roleID);
     }
 
     public boolean haveRole(int roleID) {
-
-        for (Integer ID : roleIDs) {
-
-            if (ID == roleID)
-                return true;
-        }
-
-        return false;
+        return roleIDs.contains(roleID);
     }
 }
