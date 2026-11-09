@@ -9,6 +9,9 @@ public class UserValidator {
 
     public static void validateUser(User user) {
 
+        if(user == null)
+            throw new NullPointerException("User is NULL!");
+
         validateUserField("id", user.getId());
 
         validateUserField("firstName", user.getFirstName(), nameRegex);
