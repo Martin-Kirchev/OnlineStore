@@ -1,7 +1,5 @@
 package Category;
 
-import Product.Product;
-
 import java.util.LinkedList;
 
 public class CategoryRepository {
@@ -13,36 +11,20 @@ public class CategoryRepository {
         categoryDB = new LinkedList<>();
     }
 
-    public void addCategory(Category category) {
-
-        categoryDB.add(category);
+    public boolean addCategory(Category category) {
+        return categoryDB.add(category);
     }
 
-    public void removeCategory(Category category) {
-
-        categoryDB. remove(category);
+    public boolean removeCategory(int categoryId) {
+        return categoryDB.removeIf(category -> category.getId() == categoryId);
     }
 
-    public Category findCategoryById(int id) {
-
-        for(Category category : categoryDB) {
-
-            if(category.getId() == id)
-                return category;
-        }
-
-        return null;
+    public Category findCategoryById(int categoryId) {
+        return categoryDB.stream().filter(category -> category.getId() == categoryId).findFirst().orElse(null);
     }
 
-    public Category findCategoryByName(String name) {
-
-        for(Category category : categoryDB) {
-
-            if(category.getName().equals(name))
-                return category;
-        }
-
-        return null;
+    public Category findCategoryByName(String categoryName) {
+        return categoryDB.stream().filter(category -> category.getName().equals(categoryName)).findFirst().orElse(null);
     }
 
 }
