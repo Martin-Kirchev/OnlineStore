@@ -2,55 +2,39 @@ package User;
 
 public class UserValidator {
 
+    private static final String nameRegex = "[A-Z][a-z]+";
+    private static final String addressRegex = "[A-Za-z0-9.]+";
     private static final String emailRegex = "[A-Za-z0-9]+[.]?[A-Za-z0-9]+[@]{1}[A-Za-z]+[.][a-z]+";
     private static final String passwordRegex = "[a-zA-Z0-9\\S]{8,}";
 
     public static void validateUser(User user) {
 
-        if(user.getFirstName() == null) {
+        validateUserField("id", user.getId());
 
-            throw new NullPointerException("First name is NULL!");
-        }
+        validateUserField("firstName", user.getFirstName(), nameRegex);
 
-        if(user.getLastName() == null) {
+        validateUserField("lastName", user.getLastName(), nameRegex);
 
-            throw new NullPointerException("Last name is NULL!");
-        }
+        validateUserField("address", user.getAddress(), addressRegex);
 
-        if(user.getAddress() == null) {
+        validateUserField("email", user.getEmail(), emailRegex);
 
-            throw new NullPointerException("Address name is NULL!");
-        }
-
-        try {
-            validateEmail(user.getEmail());
-        } catch (Exception e) {
-
-
-        }
-
-        try {
-            validatePassword(user.getPassword());
-        } catch (Exception e) {
-
-
-        }
+        validateUserField("password", user.getPassword(), passwordRegex);
     }
 
-    private static void validateEmail(String email) {
+    private static void validateUserField(String fieldName, String parameter, String regex) {
 
-        if(!email.matches(emailRegex)) {
+        if(parameter == null)
+            throw new NullPointerException(String.format("User %s is NULL!", fieldName));
 
-            throw new IllegalArgumentException("Email isn't valid!");
-        }
+        if(!parameter.matches(passwordRegex))
+            throw new IllegalArgumentException(String.format("User %s isn't valid! Value: %s", fieldName, parameter));
     }
 
-    private static void validatePassword(String password) {
+    private static void validateUserField(String fieldName, int parameter) {
 
-        if(!password.matches(passwordRegex)) {
-
-            throw new IllegalArgumentException("Password isn't valid!");
-        }
+        if(parameter <= 0)
+            throw new IllegalArgumentException(String.format("User %s isn't valid! Value: %d", fieldName, parameter));
     }
 
 }
