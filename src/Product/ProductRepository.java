@@ -6,39 +6,25 @@ public class ProductRepository {
 
     LinkedList<Product> productDB;
 
-    public ProductRepository(){
+    public ProductRepository() {
 
         this.productDB = new LinkedList<>();
     }
 
-    public void addProduct(Product product) {
-        productDB.add(product);
+    public boolean addProduct(Product product) {
+        return productDB.add(product);
     }
 
-    public void removeProduct(Product product) {
-        productDB.remove(product);
+    public boolean removeProduct(int productId) {
+        return productDB.removeIf(product -> product.getId() == productId);
     }
 
-    public Product findProductById(int id) {
-
-        for(Product product : productDB) {
-
-            if(product.getId() == id)
-                return product;
-        }
-
-        return null;
+    public Product findProductById(int productId) {
+        return productDB.stream().filter(product -> product.getId() == productId).findFirst().orElse(null);
     }
 
-    public Product findProductByName(String name) {
-
-        for(Product product : productDB) {
-
-            if(product.getName().equals(name))
-                return product;
-        }
-
-        return null;
+    public Product findProductByName(String productName) {
+        return productDB.stream().filter(product -> product.getName().equals(productName)).findFirst().orElse(null);
     }
 
 }
