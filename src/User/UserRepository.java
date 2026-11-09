@@ -18,12 +18,12 @@ public class UserRepository {
         return userDB.removeIf(user -> user.getId() == userId);
     }
 
-    public User findUserById(int id) {
-        return userDB.stream().filter(user -> user.getId() == id).findFirst().orElse(null);
+    public User findUserById(int userId) {
+        return userDB.stream().filter(user -> user.getId() == userId).findFirst().orElse(null);
     }
 
-    public User findUserByEmail(String email) {
-        return userDB.stream().filter(user -> user.getEmail().equals(email)).findFirst().orElse(null);
+    public User findUserByEmail(String userEmail) {
+        return userDB.stream().filter(user -> user.getEmail().equals(userEmail)).findFirst().orElse(null);
     }
 
 }
