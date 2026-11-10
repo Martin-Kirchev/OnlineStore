@@ -20,11 +20,17 @@ public class RoleRepository {
     }
 
     public Role findRoleById(int roleId) {
-        return roleDB.stream().filter(role -> role.getId() == roleId).findFirst().orElse(null);
+        return roleDB.stream()
+                        .filter(role -> role.getId() == roleId)
+                        .findFirst()
+                        .orElse(null);
     }
 
     public Role findRoleByName(String roleName) {
-        return roleDB.stream().filter(role -> role.getName().equals(roleName)).findFirst().orElse(null);
+        return roleDB.stream()
+                        .filter(role -> role.getName().equals(roleName))
+                        .findFirst()
+                        .orElse(null);
     }
 
 }

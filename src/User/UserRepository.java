@@ -19,11 +19,17 @@ public class UserRepository {
     }
 
     public User findUserById(int userId) {
-        return userDB.stream().filter(user -> user.getId() == userId).findFirst().orElse(null);
+        return userDB.stream()
+                        .filter(user -> user.getId() == userId)
+                        .findFirst()
+                        .orElse(null);
     }
 
     public User findUserByEmail(String userEmail) {
-        return userDB.stream().filter(user -> user.getEmail().equals(userEmail)).findFirst().orElse(null);
+        return userDB.stream()
+                        .filter(user -> user.getEmail().equals(userEmail))
+                        .findFirst()
+                        .orElse(null);
     }
 
 }

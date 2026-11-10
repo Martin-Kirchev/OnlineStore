@@ -33,9 +33,9 @@ public class ProductPriceRepository {
     public ProductPrice findCheapestProductPrice(int productId) {
 
         return priceDB.stream()
-                .filter(productPrice -> productPrice.getProductId() == productId)
-                .min( (price1, price2) -> Double.compare(price1.getPrice(), price2.getPrice()))
-                .orElse(null);
+                        .filter(productPrice -> productPrice.getProductId() == productId)
+                        .min( (price1, price2) -> Double.compare(price1.getPrice(), price2.getPrice()))
+                        .orElse(null);
     }
 
 }

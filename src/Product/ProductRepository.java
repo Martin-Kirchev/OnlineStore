@@ -20,11 +20,17 @@ public class ProductRepository {
     }
 
     public Product findProductById(int productId) {
-        return productDB.stream().filter(product -> product.getId() == productId).findFirst().orElse(null);
+        return productDB.stream()
+                        .filter(product -> product.getId() == productId)
+                        .findFirst()
+                        .orElse(null);
     }
 
     public Product findProductByName(String productName) {
-        return productDB.stream().filter(product -> product.getName().equals(productName)).findFirst().orElse(null);
+        return productDB.stream()
+                        .filter(product -> product.getName().equals(productName))
+                        .findFirst()
+                        .orElse(null);
     }
 
 }

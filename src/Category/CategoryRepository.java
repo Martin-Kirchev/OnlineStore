@@ -20,11 +20,17 @@ public class CategoryRepository {
     }
 
     public Category findCategoryById(int categoryId) {
-        return categoryDB.stream().filter(category -> category.getId() == categoryId).findFirst().orElse(null);
+        return categoryDB.stream()
+                            .filter(category -> category.getId() == categoryId)
+                            .findFirst()
+                            .orElse(null);
     }
 
     public Category findCategoryByName(String categoryName) {
-        return categoryDB.stream().filter(category -> category.getName().equals(categoryName)).findFirst().orElse(null);
+        return categoryDB.stream()
+                            .filter(category -> category.getName().equals(categoryName))
+                            .findFirst()
+                            .orElse(null);
     }
 
 }
