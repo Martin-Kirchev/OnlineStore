@@ -1,7 +1,5 @@
 package User;
 
-import java.security.InvalidParameterException;
-
 public class UserService {
 
     UserRepository repository;
@@ -13,31 +11,19 @@ public class UserService {
 
     void addUser(User user) {
 
-        try{
-            UserValidator.validateUser(user);
-        }
-        catch (Exception e) {
+        UserValidator.validateUser(user);
 
-            throw new InvalidParameterException("User isn't valid!");
-        }
+        if(repository.findUserByEmail(user.getEmail()) != null)
+            throw new IllegalArgumentException("User already exists!");
 
-        if(repository.findUserByEmail(user.getEmail()) == null) {
-
-            throw new IllegalArgumentException("User doesn't exist!");
-        }
-
-        repository.addUser(user);
+        if(!repository.addUser(user))
+            throw new RuntimeException("User wasn't to the repository!");
     }
 
-    void removeUser(User user) {
+    void removeUser(int userId) {
 
-        if(repository.findUserByEmail(user.getEmail()) == null) {
-
-            throw new IllegalArgumentException("User doesn't exist!");
-        }
-
-        repository.removeUser(user);
+        if(!repository.removeUser(userId))
+            throw new IllegalArgumentException("User wasn't found!");
     }
-
 
 }
