@@ -1,4 +1,4 @@
-package Product;
+package Product.Price;
 
 import java.util.LinkedList;
 

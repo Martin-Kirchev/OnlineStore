@@ -1,4 +1,4 @@
-package Product;
+package Product.Variant.Attribute;
 
 public class ProductVariantAttribute {
 

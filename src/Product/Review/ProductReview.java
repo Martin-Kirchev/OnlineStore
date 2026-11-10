@@ -1,4 +1,4 @@
-package Product;
+package Product.Review;
 
 public class ProductReview {
 

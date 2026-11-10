@@ -1,4 +1,4 @@
-package Product;
+package Product.Variant.Value;
 
 import java.util.LinkedList;
 

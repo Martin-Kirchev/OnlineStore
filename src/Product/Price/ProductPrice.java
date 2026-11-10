@@ -1,4 +1,4 @@
-package Product;
+package Product.Price;
 
 public class ProductPrice {
 

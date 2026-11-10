@@ -1,4 +1,4 @@
-package Product;
+package Product.Review;
 
 import java.util.LinkedList;
 import java.util.stream.Collectors;
