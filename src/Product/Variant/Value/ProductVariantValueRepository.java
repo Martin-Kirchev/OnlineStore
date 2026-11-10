@@ -6,7 +6,7 @@ public class ProductVariantValueRepository {
 
     LinkedList<ProductVariantValue> valueDB;
 
-    ProductVariantValueRepository() {
+    public ProductVariantValueRepository() {
 
         this.valueDB = new LinkedList<>();
     }

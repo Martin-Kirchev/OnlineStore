@@ -7,7 +7,7 @@ public class ProductVariantRepository {
 
     LinkedList<ProductVariant> variantDB;
 
-    ProductVariantRepository() {
+    public ProductVariantRepository() {
 
         this.variantDB = new LinkedList<>();
     }

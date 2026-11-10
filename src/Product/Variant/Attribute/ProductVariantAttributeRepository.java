@@ -6,7 +6,7 @@ public class ProductVariantAttributeRepository {
 
     LinkedList<ProductVariantAttribute> attributeDB;
 
-    ProductVariantAttributeRepository() {
+    public ProductVariantAttributeRepository() {
 
         this.attributeDB = new LinkedList<>();
     }
