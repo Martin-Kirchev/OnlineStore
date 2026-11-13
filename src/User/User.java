@@ -84,4 +84,8 @@ public class User   {
     public boolean haveRole(int roleID) {
         return roleIDs.contains(roleID);
     }
+
+    public Set<Integer> getRoleIDs() {
+        return roleIDs;
+    }
 }
