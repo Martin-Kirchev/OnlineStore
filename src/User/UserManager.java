@@ -1,10 +1,10 @@
 package User;
 
-public class UserService {
+public class UserManager {
 
     UserRepository repository;
 
-    public UserService() {
+    public UserManager() {
 
         repository = new UserRepository();
     }
