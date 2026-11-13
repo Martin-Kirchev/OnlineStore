@@ -18,7 +18,7 @@ public class UserManager {
         UserValidator.validateUserFields(user);
 
         if(userRepo.findUserByEmail(user.getEmail()) != null)
-            throw new IllegalArgumentException("User already exists!");
+            throw new IllegalArgumentException("User with this email already exists!");
 
         UserValidator.validateUserRoles(user, roleRepo);
 
