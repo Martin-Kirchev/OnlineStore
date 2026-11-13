@@ -16,17 +16,17 @@ public class UserValidator {
         if(user == null)
             throw new NullPointerException("User is NULL!");
 
-        validateUserField("id", user.getId());
+        validateField("id", user.getId());
 
-        validateUserField("firstName", user.getFirstName(), nameRegex);
+        validateField("firstName", user.getFirstName(), nameRegex);
 
-        validateUserField("lastName", user.getLastName(), nameRegex);
+        validateField("lastName", user.getLastName(), nameRegex);
 
-        validateUserField("address", user.getAddress(), addressRegex);
+        validateField("address", user.getAddress(), addressRegex);
 
-        validateUserField("email", user.getEmail(), emailRegex);
+        validateField("email", user.getEmail(), emailRegex);
 
-        validateUserField("password", user.getPassword(), passwordRegex);
+        validateField("password", user.getPassword(), passwordRegex);
     }
 
     public static void validateUserRoles(User user, RoleRepository roleRepo) {
@@ -43,7 +43,7 @@ public class UserValidator {
         }
     }
 
-    private static void validateUserField(String fieldName, String parameter, String regex) {
+    private static void validateField(String fieldName, String parameter, String regex) {
 
         if(parameter == null)
             throw new NullPointerException(String.format("User %s is NULL!", fieldName));
@@ -52,7 +52,7 @@ public class UserValidator {
             throw new IllegalArgumentException(String.format("User %s isn't valid! Value: %s", fieldName, parameter));
     }
 
-    private static void validateUserField(String fieldName, int parameter) {
+    private static void validateField(String fieldName, int parameter) {
 
         if(parameter <= 0)
             throw new IllegalArgumentException(String.format("User %s isn't valid! Value: %d", fieldName, parameter));
