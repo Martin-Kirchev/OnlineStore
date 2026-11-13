@@ -5,16 +5,16 @@ public class ProductVariant {
     int id;
     int productId;
     int quantity;
-    int attribute_id;
-    int value_id;
+    int attributeId;
+    int valueId;
 
-    public ProductVariant(int id, int productId, int quantity, int attribute_id, int value_id) {
+    public ProductVariant(int id, int productId, int quantity, int attributeId, int valueId) {
 
         this.id = id;
         this.productId = productId;
         this.quantity = quantity;
-        this.attribute_id = attribute_id;
-        this.value_id = value_id;
+        this.attributeId = attributeId;
+        this.valueId = valueId;
     }
 
     public int getId() {
@@ -41,19 +41,19 @@ public class ProductVariant {
         this.quantity = quantity;
     }
 
-    public int getAttribute_id() {
-        return attribute_id;
+    public int getAttributeId() {
+        return attributeId;
     }
 
-    public void setAttribute_id(int attribute_id) {
-        this.attribute_id = attribute_id;
+    public void setAttributeId(int attributeId) {
+        this.attributeId = attributeId;
     }
 
-    public int getValue_id() {
-        return value_id;
+    public int getValueId() {
+        return valueId;
     }
 
-    public void setValue_id(int value_id) {
-        this.value_id = value_id;
+    public void setValueId(int valueId) {
+        this.valueId = valueId;
     }
 }
