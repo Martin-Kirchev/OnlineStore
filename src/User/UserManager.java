@@ -23,7 +23,7 @@ public class UserManager {
         UserValidator.validateUserRoles(user, roleRepo);
 
         if(!userRepo.addUser(user))
-            throw new RuntimeException("User wasn't to the repository!");
+            throw new RuntimeException("User wasn't added to the repository!");
     }
 
     public void removeUser(int userId) {
