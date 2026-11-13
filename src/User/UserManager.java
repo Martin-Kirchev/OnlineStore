@@ -1,28 +1,34 @@
 package User;
 
+import Role.RoleRepository;
+
 public class UserManager {
 
-    UserRepository repository;
+    UserRepository userRepo;
+    RoleRepository roleRepo;
 
     public UserManager() {
 
-        repository = new UserRepository();
+        this.userRepo = new UserRepository();
+        this.roleRepo = new RoleRepository();
     }
 
-    void addUser(User user) {
+    public void addUser(User user) {
 
-        UserValidator.validateUser(user);
+        UserValidator.validateUserFields(user);
 
-        if(repository.findUserByEmail(user.getEmail()) != null)
+        if(userRepo.findUserByEmail(user.getEmail()) != null)
             throw new IllegalArgumentException("User already exists!");
 
-        if(!repository.addUser(user))
+        UserValidator.validateUserRoles(user, roleRepo);
+
+        if(!userRepo.addUser(user))
             throw new RuntimeException("User wasn't to the repository!");
     }
 
-    void removeUser(int userId) {
+    public void removeUser(int userId) {
 
-        if(!repository.removeUser(userId))
+        if(!userRepo.removeUser(userId))
             throw new IllegalArgumentException("User wasn't found!");
     }
 
