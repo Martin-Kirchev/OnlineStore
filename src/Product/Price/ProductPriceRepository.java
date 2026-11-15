@@ -1,5 +1,6 @@
 package Product.Price;
 
+import java.util.Comparator;
 import java.util.LinkedList;
 
 public class ProductPriceRepository {
@@ -24,7 +25,7 @@ public class ProductPriceRepository {
 
         return priceDB.stream()
                         .filter(productPrice -> productPrice.getProductId() == productId)
-                        .max((price1, price2) -> price1.getTimestamp().compareTo(price2.getTimestamp()))
+                        .max(Comparator.comparing(ProductPrice::getTimestamp))
                         .orElse(null);
     }
 
@@ -33,7 +34,16 @@ public class ProductPriceRepository {
 
         return priceDB.stream()
                         .filter(productPrice -> productPrice.getProductId() == productId)
-                        .min( (price1, price2) -> Double.compare(price1.getPrice(), price2.getPrice()))
+                        .min(Comparator.comparingDouble(ProductPrice::getPrice))
+                        .orElse(null);
+    }
+
+    public ProductPrice findPriceByProductIdAndTimestamp(int productId, String timestamp) {
+
+        return priceDB.stream()
+                        .filter(price -> price.getProductId() == productId
+                                                        && price.getTimestamp().equals(timestamp))
+                        .findFirst()
                         .orElse(null);
     }
 
