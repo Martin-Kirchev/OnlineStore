@@ -2,15 +2,25 @@ package Product.Price;
 
 public class ProductPrice {
 
+    int id;
     int productId;
     String timestamp;
     double price;
 
-    public ProductPrice(int productId, String timestamp, double price) {
+    public ProductPrice(int id, int productId, String timestamp, double price) {
 
+        this.id = id;
         this.productId = productId;
         this.timestamp = timestamp;
         this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getProductId() {

@@ -15,9 +15,8 @@ public class ProductPriceRepository {
         return priceDB.add(productPrice);
     }
 
-    public boolean removeProductPrice(int productId, String productPriceTimestamp) {
-        return priceDB.removeIf(productPrice -> productPrice.getProductId() == productId
-                                                                && productPrice.getTimestamp().equals(productPriceTimestamp));
+    public boolean removeProductPrice(int priceId) {
+        return priceDB.removeIf(productPrice -> productPrice.getId() == priceId);
     }
 
     /** Това може да се замени със заявка! */
