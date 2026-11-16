@@ -19,4 +19,12 @@ public class ProductVariantValueRepository {
         return valueDB.removeIf(value -> value.getId() == valueId);
     }
 
+    public ProductVariantValue findValueById(int valueId) {
+
+        return valueDB.stream()
+                        .filter(value -> value.getId() == valueId)
+                        .findFirst()
+                        .orElse(null);
+    }
+
 }

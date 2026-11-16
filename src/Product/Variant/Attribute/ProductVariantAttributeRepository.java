@@ -1,5 +1,7 @@
 package Product.Variant.Attribute;
 
+import Product.Variant.ProductVariant;
+
 import java.util.LinkedList;
 
 public class ProductVariantAttributeRepository {
@@ -18,4 +20,13 @@ public class ProductVariantAttributeRepository {
     public boolean removeProductVariantAttribute(int attributeId) {
         return attributeDB.removeIf(attribute -> attribute.getId() == attributeId);
     }
+
+    public ProductVariantAttribute findAttributeById(int attributeId) {
+
+        return attributeDB.stream()
+                            .filter(attribute -> attribute.getId() == attributeId)
+                            .findFirst()
+                            .orElse(null);
+    }
+
 }
