@@ -1,8 +1,9 @@
 package Product.Variant;
 
-public class ProductVariant {
+import util.BaseEntity;
 
-    int id;
+public class ProductVariant extends BaseEntity {
+
     int productId;
     int quantity;
     int attributeId;
@@ -10,19 +11,11 @@ public class ProductVariant {
 
     public ProductVariant(int id, int productId, int quantity, int attributeId, int valueId) {
 
-        this.id = id;
+        this.setId(id);
         this.productId = productId;
         this.quantity = quantity;
         this.attributeId = attributeId;
         this.valueId = valueId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getProductId() {
