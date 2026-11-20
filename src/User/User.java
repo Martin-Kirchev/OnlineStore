@@ -1,11 +1,12 @@
 package User;
 
+import util.BaseEntity;
+
 import java.util.HashSet;
 import java.util.Set;
 
-public class User   {
+public class User extends BaseEntity {
 
-    private int id;
     private String firstName;
     private String lastName;
     private String address;
@@ -16,21 +17,12 @@ public class User   {
     public User(String lastName, String firstName,
                 String password, String email, String address) {
 
-        this.id = -1;
         this.lastName = lastName;
         this.firstName = firstName;
         this.roleIDs = new HashSet<>();
         this.password = password;
         this.email = email;
         this.address = address;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstName() {

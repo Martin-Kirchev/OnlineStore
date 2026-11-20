@@ -1,26 +1,19 @@
 package Payment;
 
-public class Payment {
+import util.NamedEntity;
 
-    int id;
+public class Payment extends NamedEntity {
+
     String type;
     String status;
     Double price;
 
     public Payment(int id, String type, String status, Double price) {
 
-        this.id = id;
+        this.setId(id);
         this.type = type;
         this.status = status;
         this.price = price;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getType() {

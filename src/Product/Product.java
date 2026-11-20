@@ -1,32 +1,16 @@
 package Product;
 
-public class Product {
+import util.NamedEntity;
 
-    private int id;
-    private String name;
+public class Product extends NamedEntity {
+
     private String description;
 
     public Product(int id, String name, String description) {
 
-        this.id = id;
-        this.name = name;
+        this.setId(id);
+        this.setName(name);
         this.description = description;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {

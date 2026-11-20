@@ -1,8 +1,9 @@
 package Product.Review;
 
-public class ProductReview {
+import util.BaseEntity;
 
-    int id;
+public class ProductReview extends BaseEntity {
+
     int userId;
     int productId;
     int rating;
@@ -11,20 +12,12 @@ public class ProductReview {
 
     public ProductReview(int id, int userId, int productId, int rating, String description, String timestamp) {
 
-        this.id = id;
+        this.setId(id);
         this.userId = userId;
         this.productId = productId;
         this.rating = rating;
         this.description = description;
         this.timestamp = timestamp;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getUserId() {

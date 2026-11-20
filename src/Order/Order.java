@@ -1,26 +1,19 @@
 package Order;
 
-public class Order {
+import util.BaseEntity;
 
-    int id;
+public class Order extends BaseEntity {
+
     int userId;
     String timestamp;
     int paymentId;
 
     public Order(int id, int userId, String timestamp, int paymentId) {
 
-        this.id = id;
+        this.setId(id);
         this.userId = userId;
         this.timestamp = timestamp;
         this.paymentId = paymentId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getUserId() {

@@ -1,30 +1,13 @@
 package Product.Variant.Value;
 
-public class ProductVariantValue {
+import util.NamedEntity;
 
-    int id;
-    String name;
+public class ProductVariantValue extends NamedEntity {
 
     public ProductVariantValue(int id, String name) {
 
-        this.id = id;
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        this.setId(id);
+        this.setName(name);
     }
 
 }
