@@ -10,7 +10,6 @@ import Product.Variant.ProductVariant;
 import Product.Variant.ProductVariantRepository;
 import Product.Variant.Value.ProductVariantValue;
 import Product.Variant.Value.ProductVariantValueRepository;
-import User.UserManager;
 
 public class ProductManager {
 
@@ -37,32 +36,32 @@ public class ProductManager {
 
         //ProductValidator.validateUniqeField(name);
 
-        if(!productRepo.addProduct(product))
+        if(!productRepo.add(product))
             throw new RuntimeException("Product wasn't added to the repository!");
     }
 
     public void removeProduct(int productId){
 
-        if(!productRepo.removeProduct(productId))
+        if(!productRepo.remove(productId))
             throw new IllegalArgumentException("Product wasn't found!");
     }
 
-    public void addPrice(ProductPrice productPrice) {
+    public void wPrice(ProductPrice productPrice) {
 
         ProductValidator.validateFields(productPrice);
 
         //ProductValidator.validateUniqueFields(productId, timestamp);
 
-        if(productRepo.findProductById(productPrice.getProductId()) == null)
+        if(productRepo.findById(productPrice.getProductId()) == null)
             throw new IllegalArgumentException("Price points to not existing product!");
 
-        if(!priceRepo.addProductPrice(productPrice))
+        if(!priceRepo.add(productPrice))
             throw new RuntimeException("Product price wasn't added to the repository!");
     }
 
     public void removePrice(int priceId) {
 
-        if(!priceRepo.removeProductPrice(priceId))
+        if(!priceRepo.remove(priceId))
             throw new IllegalArgumentException("Product price wasn't found!");
     }
 
@@ -72,22 +71,22 @@ public class ProductManager {
 
         //ProductValidator.validateUniqueFields(productId, attributeId, variantId);
 
-        if(productRepo.findProductById(variant.getProductId()) == null)
+        if(productRepo.findById(variant.getProductId()) == null)
             throw new IllegalArgumentException("Product variant points to not existing product!");
 
-        if(attributeRepo.findAttributeById(variant.getAttributeId()) == null)
+        if(attributeRepo.findById(variant.getAttributeId()) == null)
             throw new IllegalArgumentException("Product variant points to not existing product attribute!");
 
-        if(valueRepo.findValueById(variant.getValueId()) == null)
+        if(valueRepo.findById(variant.getValueId()) == null)
             throw new IllegalArgumentException("Product variant points to not existing product value!");
 
-        if(!variantRepo.addProductVariant(variant))
+        if(!variantRepo.add(variant))
             throw new RuntimeException("Product variant wasn't added to the repository!");
     }
 
     public void removeVariant(int variantId) {
 
-        if(!variantRepo.removeProductVariant(variantId))
+        if(!variantRepo.remove(variantId))
             throw new IllegalArgumentException("Product variant wasn't found!");
     }
 
@@ -97,13 +96,13 @@ public class ProductManager {
 
         //ProductValidator.validateUniqeField(name);
 
-        if(!attributeRepo.addProductVariantAttribute(attribute))
+        if(!attributeRepo.add(attribute))
             throw new RuntimeException("Product variant attribute wasn't added to the repository!");
     }
 
     public void removeVariantAttribute(int attributeId) {
 
-        if(!attributeRepo.removeProductVariantAttribute(attributeId))
+        if(!attributeRepo.remove(attributeId))
             throw new IllegalArgumentException("Product variant attribute wasn't found!");
     }
 
@@ -113,13 +112,13 @@ public class ProductManager {
 
         //ProductValidator.validateUniqeField(name)
 
-        if(!valueRepo.addProductVariantValue(value))
+        if(!valueRepo.add(value))
             throw new RuntimeException("Product variant value wasn't added to the repository!");
     }
 
     public void removeVariantValue(int valueId) {
 
-        if(!valueRepo.removeProductVariantValue(valueId))
+        if(!valueRepo.remove(valueId))
             throw new IllegalArgumentException("Product variant value wasn't found!");
     }
 
@@ -131,16 +130,16 @@ public class ProductManager {
 
         // UserManager.findUser
 
-        if(productRepo.findProductById(review.getProductId()) == null)
+        if(productRepo.findById(review.getProductId()) == null)
             throw new IllegalArgumentException("Product review points to not existing product!");
 
-        if(!reviewRepo.addProductReview(review))
+        if(!reviewRepo.add(review))
             throw new RuntimeException("Product review wasn't added to the repository!");
     }
 
     public void removeReview(int reviewId) {
 
-        if(!reviewRepo.removeProductReview(reviewId))
+        if(!reviewRepo.remove(reviewId))
             throw new IllegalArgumentException("Product review wasn't found!");
     }
 
