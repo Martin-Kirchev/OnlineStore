@@ -1,36 +1,16 @@
 package Product;
 
-import java.util.LinkedList;
+import util.BaseRepository;
 
-public class ProductRepository {
+public class ProductRepository extends BaseRepository<Product> {
 
-    LinkedList<Product> productDB;
-
-    public ProductRepository() {
-
-        this.productDB = new LinkedList<>();
-    }
-
-    public boolean addProduct(Product product) {
-        return productDB.add(product);
-    }
-
-    public boolean removeProduct(int productId) {
-        return productDB.removeIf(product -> product.getId() == productId);
-    }
-
-    public Product findProductById(int productId) {
-        return productDB.stream()
-                        .filter(product -> product.getId() == productId)
-                        .findFirst()
-                        .orElse(null);
-    }
+    public ProductRepository() {}
 
     public Product findProductByName(String productName) {
-        return productDB.stream()
-                        .filter(product -> product.getName().equals(productName))
-                        .findFirst()
-                        .orElse(null);
+        return this.getStream()
+                    .filter(product -> product.getName().equals(productName))
+                    .findFirst()
+                    .orElse(null);
     }
 
 }

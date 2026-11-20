@@ -1,32 +1,9 @@
 package Product.Variant.Attribute;
 
-import Product.Variant.ProductVariant;
+import util.BaseRepository;
 
-import java.util.LinkedList;
+public class ProductVariantAttributeRepository extends BaseRepository<ProductVariantAttribute> {
 
-public class ProductVariantAttributeRepository {
-
-    LinkedList<ProductVariantAttribute> attributeDB;
-
-    public ProductVariantAttributeRepository() {
-
-        this.attributeDB = new LinkedList<>();
-    }
-
-    public boolean addProductVariantAttribute(ProductVariantAttribute attribute) {
-        return attributeDB.add(attribute);
-    }
-
-    public boolean removeProductVariantAttribute(int attributeId) {
-        return attributeDB.removeIf(attribute -> attribute.getId() == attributeId);
-    }
-
-    public ProductVariantAttribute findAttributeById(int attributeId) {
-
-        return attributeDB.stream()
-                            .filter(attribute -> attribute.getId() == attributeId)
-                            .findFirst()
-                            .orElse(null);
-    }
+    public ProductVariantAttributeRepository() {}
 
 }

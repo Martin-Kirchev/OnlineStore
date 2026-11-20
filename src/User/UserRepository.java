@@ -1,35 +1,16 @@
 package User;
 
-import java.util.LinkedList;
+import util.BaseRepository;
 
-public class UserRepository {
+public class UserRepository extends BaseRepository<User> {
 
-    LinkedList<User> userDB;
-
-    public UserRepository() {
-        this.userDB = new LinkedList<>();
-    }
-
-    public boolean addUser(User user) {
-        return userDB.add(user);
-    }
-
-    public boolean removeUser(int userId) {
-        return userDB.removeIf(user -> user.getId() == userId);
-    }
-
-    public User findUserById(int userId) {
-        return userDB.stream()
-                        .filter(user -> user.getId() == userId)
-                        .findFirst()
-                        .orElse(null);
-    }
+    public UserRepository() {}
 
     public User findUserByEmail(String userEmail) {
-        return userDB.stream()
-                        .filter(user -> user.getEmail().equals(userEmail))
-                        .findFirst()
-                        .orElse(null);
+        return this.getStream()
+                    .filter(user -> user.getEmail().equals(userEmail))
+                    .findFirst()
+                    .orElse(null);
     }
 
 }
