@@ -8,7 +8,7 @@ public class ProductPriceRepository extends BaseRepository<ProductPrice> {
 
     public ProductPriceRepository() {}
 
-    public ProductPrice findCurrentProductPrice(int productId) {
+    public ProductPrice findCurrentPrice(int productId) {
 
         return this.getStream()
                     .filter(productPrice -> productPrice.getProductId() == productId)
@@ -16,7 +16,7 @@ public class ProductPriceRepository extends BaseRepository<ProductPrice> {
                     .orElse(null);
     }
 
-    public ProductPrice findCheapestProductPrice(int productId) {
+    public ProductPrice findCheapestPrice(int productId) {
 
         return this.getStream()
                     .filter(productPrice -> productPrice.getProductId() == productId)

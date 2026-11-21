@@ -17,18 +17,18 @@ public class UserManager {
 
         UserValidator.validateUserFields(user);
 
-        if(userRepo.findUserByEmail(user.getEmail()) != null)
+        if(userRepo.findByEmail(user.getEmail()) != null)
             throw new IllegalArgumentException("User with this email already exists!");
 
         UserValidator.validateUserRoles(user, roleRepo);
 
-        if(!userRepo.addUser(user))
+        if(!userRepo.add(user))
             throw new RuntimeException("User wasn't added to the repository!");
     }
 
     public void removeUser(int userId) {
 
-        if(!userRepo.removeUser(userId))
+        if(!userRepo.remove(userId))
             throw new IllegalArgumentException("User wasn't found!");
     }
 

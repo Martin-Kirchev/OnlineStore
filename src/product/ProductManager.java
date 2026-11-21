@@ -46,7 +46,7 @@ public class ProductManager {
             throw new IllegalArgumentException("Product wasn't found!");
     }
 
-    public void wPrice(ProductPrice productPrice) {
+    public void addPrice(ProductPrice productPrice) {
 
         ProductValidator.validateFields(productPrice);
 

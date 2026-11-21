@@ -9,7 +9,7 @@ public class ProductVariantRepository extends BaseRepository<ProductVariant> {
 
     public ProductVariantRepository() {}
 
-    public LinkedList<ProductVariant> findProductVariants(int productId) {
+    public LinkedList<ProductVariant> findVariants(int productId) {
 
         LinkedList<ProductVariant> productVariants = this.getStream()
                                                             .filter(variant -> variant.getProductId() == productId)
