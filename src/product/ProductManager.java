@@ -52,8 +52,8 @@ public class ProductManager {
 
         //ProductValidator.validateUniqueFields(productId, timestamp);
 
-        if(productRepo.findById(productPrice.getProductId()) == null)
-            throw new IllegalArgumentException("Price points to not existing product!");
+//        if(productRepo.findById(productPrice.getProductId()) == null)
+//            throw new IllegalArgumentException("Price points to not existing product!");
 
         if(!priceRepo.add(productPrice))
             throw new RuntimeException("Product price wasn't added to the repository!");

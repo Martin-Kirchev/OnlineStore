@@ -1,61 +1,30 @@
 package user;
 
-import role.RoleRepository;
+import util.BaseValidator;
 
-import java.util.Set;
-
-public class UserValidator {
+public class UserValidator extends BaseValidator<User> {
 
     private static final String nameRegex = "[A-Z][a-z]+";
     private static final String addressRegex = "[A-Za-z0-9.]+";
     private static final String emailRegex = "[A-Za-z0-9]+[.]?[A-Za-z0-9]+[@]{1}[A-Za-z]+[.][a-z]+";
     private static final String passwordRegex = "[a-zA-Z0-9\\S]{8,}";
 
-    public static void validateUserFields(User user) {
+    @Override
+    public void validate(User user) {
 
-        if(user == null)
-            throw new NullPointerException("User is NULL!");
+        isNotNull("User", user);
 
-        validateField("id", user.getId());
+        validateField("User id", user.getId());
 
-        validateField("firstName", user.getFirstName(), nameRegex);
+        validateField("User firstName", user.getFirstName(), nameRegex);
 
-        validateField("lastName", user.getLastName(), nameRegex);
+        validateField("User lastName", user.getLastName(), nameRegex);
 
-        validateField("address", user.getAddress(), addressRegex);
+        validateField("User address", user.getAddress(), addressRegex);
 
-        validateField("email", user.getEmail(), emailRegex);
+        validateField("User email", user.getEmail(), emailRegex);
 
-        validateField("password", user.getPassword(), passwordRegex);
-    }
-
-    public static void validateUserRoles(User user, RoleRepository roleRepo) {
-
-        Set<Integer> userRoleIDs = user.getRoleIDs();
-
-        for(int role : userRoleIDs) {
-
-            if(role <= 0)
-                throw new IllegalArgumentException(String.format("User role isn't valid! Value: %d", role));
-
-            if(roleRepo.findRoleById(role) == null)
-                throw new IllegalArgumentException(String.format("User role isn't in RoleRepository! Value: %d", role));
-        }
-    }
-
-    private static void validateField(String fieldName, String parameter, String regex) {
-
-        if(parameter == null)
-            throw new NullPointerException(String.format("User %s is NULL!", fieldName));
-
-        if(!parameter.matches(regex))
-            throw new IllegalArgumentException(String.format("User %s isn't valid! Value: %s", fieldName, parameter));
-    }
-
-    private static void validateField(String fieldName, int parameter) {
-
-        if(parameter <= 0)
-            throw new IllegalArgumentException(String.format("User %s isn't valid! Value: %d", fieldName, parameter));
+        validateField("User password", user.getPassword(), passwordRegex);
     }
 
 }
