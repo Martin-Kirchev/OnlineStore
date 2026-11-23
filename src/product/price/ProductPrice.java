@@ -1,6 +1,6 @@
 package product.price;
 
-import util.BaseEntity;
+import util.entity.BaseEntity;
 
 public class ProductPrice extends BaseEntity {
 

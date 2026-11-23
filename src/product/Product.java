@@ -1,6 +1,6 @@
 package product;
 
-import util.NamedEntity;
+import util.entity.NamedEntity;
 
 public class Product extends NamedEntity {
 

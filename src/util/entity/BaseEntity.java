@@ -1,4 +1,4 @@
-package util;
+package util.entity;
 
 public abstract class BaseEntity {
 

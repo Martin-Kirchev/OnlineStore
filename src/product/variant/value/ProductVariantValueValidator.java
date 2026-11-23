@@ -1,6 +1,6 @@
 package product.variant.value;
 
-import util.BaseValidator;
+import util.validator.BaseValidator;
 
 public class ProductVariantValueValidator extends BaseValidator<ProductVariantValue> {
 

@@ -1,6 +1,6 @@
 package product.variant;
 
-import util.BaseRepository;
+import util.repository.BaseRepository;
 
 import java.util.LinkedList;
 import java.util.stream.Collectors;

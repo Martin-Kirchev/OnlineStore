@@ -1,4 +1,6 @@
-package util;
+package util.repository;
+
+import util.entity.BaseEntity;
 
 import java.util.LinkedList;
 import java.util.stream.Stream;

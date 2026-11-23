@@ -1,6 +1,6 @@
 package role;
 
-import util.NamedEntity;
+import util.entity.NamedEntity;
 
 public class Role extends NamedEntity {
 

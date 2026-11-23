@@ -1,6 +1,6 @@
 package product.price;
 
-import util.BaseValidator;
+import util.validator.BaseValidator;
 
 public class ProductPriceValidator extends BaseValidator<ProductPrice> {
 

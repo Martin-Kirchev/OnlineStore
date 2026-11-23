@@ -1,6 +1,6 @@
 package order;
 
-import util.BaseEntity;
+import util.entity.BaseEntity;
 
 public class Order extends BaseEntity {
 

@@ -1,7 +1,6 @@
-package util;
+package util.validator;
 
-import product.variant.attribute.ProductVariantAttribute;
-import product.variant.value.ProductVariantValue;
+import util.entity.BaseEntity;
 
 public abstract class BaseValidator<T extends BaseEntity> implements Validator<T> {
 

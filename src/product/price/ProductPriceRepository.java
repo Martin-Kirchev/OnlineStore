@@ -1,6 +1,6 @@
 package product.price;
 
-import util.BaseRepository;
+import util.repository.BaseRepository;
 
 import java.util.Comparator;
 

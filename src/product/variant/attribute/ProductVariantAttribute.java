@@ -1,6 +1,6 @@
 package product.variant.attribute;
 
-import util.NamedEntity;
+import util.entity.NamedEntity;
 
 public class ProductVariantAttribute extends NamedEntity {
 

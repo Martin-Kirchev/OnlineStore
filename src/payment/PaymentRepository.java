@@ -1,6 +1,6 @@
 package payment;
 
-import util.BaseRepository;
+import util.repository.BaseRepository;
 
 public class PaymentRepository extends BaseRepository<Payment> {
 

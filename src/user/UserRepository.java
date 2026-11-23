@@ -1,6 +1,6 @@
 package user;
 
-import util.BaseRepository;
+import util.repository.BaseRepository;
 
 public class UserRepository extends BaseRepository<User> {
 

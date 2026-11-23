@@ -1,6 +1,6 @@
 package product;
 
-import util.BaseRepository;
+import util.repository.BaseRepository;
 
 public class ProductRepository extends BaseRepository<Product> {
 

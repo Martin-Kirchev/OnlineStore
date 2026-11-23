@@ -1,6 +1,6 @@
 package product.variant;
 
-import util.BaseEntity;
+import util.entity.BaseEntity;
 
 public class ProductVariant extends BaseEntity {
 

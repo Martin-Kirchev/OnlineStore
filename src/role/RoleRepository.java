@@ -1,6 +1,6 @@
 package role;
 
-import util.BaseRepository;
+import util.repository.BaseRepository;
 
 public class RoleRepository extends BaseRepository<Role> {
 

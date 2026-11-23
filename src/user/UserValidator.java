@@ -1,6 +1,6 @@
 package user;
 
-import util.BaseValidator;
+import util.validator.BaseValidator;
 
 public class UserValidator extends BaseValidator<User> {
 

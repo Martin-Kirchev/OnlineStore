@@ -1,6 +1,6 @@
 package product.variant.value;
 
-import util.NamedEntity;
+import util.entity.NamedEntity;
 
 public class ProductVariantValue extends NamedEntity {
 

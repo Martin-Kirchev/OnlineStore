@@ -1,6 +1,6 @@
 package category;
 
-import util.BaseRepository;
+import util.repository.BaseRepository;
 
 public class CategoryRepository extends BaseRepository<Category> {
 

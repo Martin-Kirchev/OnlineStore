@@ -1,6 +1,6 @@
 package product.review;
 
-import util.BaseEntity;
+import util.entity.BaseEntity;
 
 public class ProductReview extends BaseEntity {
 

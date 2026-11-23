@@ -1,6 +1,6 @@
 package user;
 
-import util.BaseEntity;
+import util.entity.BaseEntity;
 
 import java.util.HashSet;
 import java.util.Set;

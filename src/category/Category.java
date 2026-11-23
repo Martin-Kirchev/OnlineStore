@@ -1,6 +1,6 @@
 package category;
 
-import util.NamedEntity;
+import util.entity.NamedEntity;
 
 import java.util.HashSet;
 import java.util.Set;

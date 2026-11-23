@@ -1,6 +1,6 @@
 package payment;
 
-import util.NamedEntity;
+import util.entity.NamedEntity;
 
 public class Payment extends NamedEntity {
 

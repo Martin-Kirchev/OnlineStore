@@ -1,4 +1,6 @@
-package util;
+package util.validator;
+
+import util.entity.BaseEntity;
 
 public class ValidatorManager<T extends BaseEntity> {
 
