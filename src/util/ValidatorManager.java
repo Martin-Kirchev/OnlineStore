@@ -1,15 +1,30 @@
 package util;
 
-public class ValidatorManager {
+public class ValidatorManager<T extends BaseEntity> {
 
-    private final BaseValidator<BaseEntity> validator;
+    private BaseValidator<T> validator;
 
-    public ValidatorManager(BaseValidator<BaseEntity> validator) {
+    public ValidatorManager() {
+
+        this.validator = null;
+    }
+
+    public ValidatorManager(BaseValidator<T> validator) {
 
         this.validator = validator;
     }
 
-    public void validate(BaseEntity instance) {
+    public void setValidator(BaseValidator<T> validator) {
+
+        this.validator = validator;
+    }
+
+    public boolean isNull() {
+
+        return this.validator == null;
+    }
+
+    public void validate(T instance) {
 
         validator.validate(instance);
     }
