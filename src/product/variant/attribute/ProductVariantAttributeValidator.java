@@ -1,10 +1,9 @@
 package product.variant.attribute;
 
 import util.validator.BaseValidator;
+import util.validator.RegexList;
 
 public class ProductVariantAttributeValidator extends BaseValidator<ProductVariantAttribute> {
-
-    private static final String nameRegex = "";
 
     @Override
     public void validate(ProductVariantAttribute attribute) {
@@ -13,7 +12,7 @@ public class ProductVariantAttributeValidator extends BaseValidator<ProductVaria
 
         validateField("Product variant attribute id", attribute.getId());
 
-        validateField("Product variant attribute name", attribute.getName(), nameRegex);
+        validateField("Product variant attribute name", attribute.getName(), RegexList.variantName);
     }
 
 }

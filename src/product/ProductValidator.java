@@ -1,11 +1,9 @@
 package product;
 
 import util.validator.BaseValidator;
+import util.validator.RegexList;
 
 public class ProductValidator extends BaseValidator<Product> {
-
-    private static final String nameRegex = "";
-    private static final String descriptionRegex = "";
 
     @Override
     public void validate(Product product) {
@@ -14,8 +12,8 @@ public class ProductValidator extends BaseValidator<Product> {
 
         validateField("Product id", product.getId());
 
-        validateField("Product name", product.getName(), nameRegex);
+        validateField("Product name", product.getName(), RegexList.productName);
 
-        validateField("Product description", product.getDescription(), descriptionRegex);
+        validateField("Product description", product.getDescription(), RegexList.productDescription);
     }
 }
