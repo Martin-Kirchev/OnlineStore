@@ -4,30 +4,19 @@ import util.entity.BaseEntity;
 
 public class ValidatorManager<T extends BaseEntity> {
 
-    private BaseValidator<T> validator;
-
-    public ValidatorManager() {
-
-        this.validator = null;
-    }
+    private final BaseValidator<T> validator;
 
     public ValidatorManager(BaseValidator<T> validator) {
 
         this.validator = validator;
     }
 
-    public void setValidator(BaseValidator<T> validator) {
-
-        this.validator = validator;
+    public void validate(T instance) {
+        validator.validate(instance);
     }
 
     public boolean isNull() {
-
         return this.validator == null;
     }
 
-    public void validate(T instance) {
-
-        validator.validate(instance);
-    }
 }
