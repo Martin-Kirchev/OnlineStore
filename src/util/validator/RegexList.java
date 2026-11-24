@@ -10,10 +10,10 @@ public class RegexList {
     public static final String productName = "";
     public static final String productDescription = "";
 
-    public static final String priceTimestamp = "";
-
-    public static final String variantName = "";
-
     public static final String reviewDescription = "";
+
+    public static final String timestamp = "";
+
+    public static final String baseName = "";
 
 }
