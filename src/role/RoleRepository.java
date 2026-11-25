@@ -1,16 +1,7 @@
 package role;
 
-import util.repository.BaseRepository;
+import util.repository.NamedRepository;
 
-public class RoleRepository extends BaseRepository<Role> {
-
-    public RoleRepository() {}
-
-    public Role findByName(String roleName) {
-        return this.getStream()
-                    .filter(role -> role.getName().equals(roleName))
-                    .findFirst()
-                    .orElse(null);
-    }
+public class RoleRepository extends NamedRepository<Role> {
 
 }

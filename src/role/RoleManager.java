@@ -7,22 +7,13 @@ import java.util.Set;
 
 public class RoleManager extends BaseManager<Role, RoleRepository> {
 
-    private final RoleRepository repository;
-
-    public RoleManager() {
-        this(new RoleRepository());
+    public RoleManager(RoleRepository repository) {
+        super(new RoleRepository(), new ValidatorManager<>(new RoleValidator()));
     }
 
-    private RoleManager(RoleRepository repository) {
-        super(repository, new ValidatorManager<>(new RoleValidator()));
+    public void checkIds(Set<Integer> ids) {
 
-        this.repository = repository;
-    }
-
-
-    public void checkUniqueIds(Set<Integer> ids) {
-
-        if (!ids.stream().allMatch(id -> repository.findById(id) != null))
+        if (!ids.stream().allMatch(id -> this.getRepository().findById(id) != null))
             throw new IllegalArgumentException("A role id was not found!");
     }
 
