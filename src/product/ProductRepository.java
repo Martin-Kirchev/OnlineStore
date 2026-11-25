@@ -1,16 +1,7 @@
 package product;
 
-import util.repository.BaseRepository;
+import util.repository.NamedRepository;
 
-public class ProductRepository extends BaseRepository<Product> {
-
-    public ProductRepository() {}
-
-    public Product findByName(String productName) {
-        return this.getStream()
-                    .filter(product -> product.getName().equals(productName))
-                    .findFirst()
-                    .orElse(null);
-    }
+public class ProductRepository extends NamedRepository<Product> {
 
 }
