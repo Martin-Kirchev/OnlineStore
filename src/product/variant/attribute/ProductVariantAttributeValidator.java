@@ -8,11 +8,11 @@ public class ProductVariantAttributeValidator extends BaseValidator<ProductVaria
     @Override
     public void validate(ProductVariantAttribute attribute) {
 
-        isNotNull("Product variant attribute", attribute);
+        isNotNull("Variant attribute", attribute);
 
-        validateField("Product variant attribute id", attribute.getId());
+        validateField("Variant attribute id", attribute.getId());
 
-        validateField("Product variant attribute name", attribute.getName(), RegexList.variantName);
+        validateField("Variant attribute name", attribute.getName(), RegexList.baseName);
     }
 
 }

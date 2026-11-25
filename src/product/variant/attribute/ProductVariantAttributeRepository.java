@@ -1,9 +1,7 @@
 package product.variant.attribute;
 
-import util.repository.BaseRepository;
+import util.repository.NamedRepository;
 
-public class ProductVariantAttributeRepository extends BaseRepository<ProductVariantAttribute> {
-
-    public ProductVariantAttributeRepository() {}
+public class ProductVariantAttributeRepository extends NamedRepository<ProductVariantAttribute> {
 
 }
