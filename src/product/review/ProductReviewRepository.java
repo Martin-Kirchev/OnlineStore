@@ -7,8 +7,6 @@ import java.util.stream.Collectors;
 
 public class ProductReviewRepository extends BaseRepository<ProductReview> {
 
-    public ProductReviewRepository() {}
-
     public LinkedList<ProductReview> findUserReviews(int userId) {
 
         LinkedList<ProductReview> userReviews = this.getStream()
