@@ -14,16 +14,15 @@ public class User extends BaseEntity {
     private String password;
     private final Set<Integer> roleIDs;
 
-    public User(int id, String lastName, String firstName,
-                String password, String email, String address) {
+    public User(int id, String firstName, String lastName, String address, String email, String password) {
 
         this.setId(id);
-        this.lastName = lastName;
         this.firstName = firstName;
-        this.roleIDs = new HashSet<>();
-        this.password = password;
-        this.email = email;
+        this.lastName = lastName;
         this.address = address;
+        this.email = email;
+        this.password = password;
+        this.roleIDs = new HashSet<>();
     }
 
     public String getFirstName() {
