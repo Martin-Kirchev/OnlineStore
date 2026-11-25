@@ -6,8 +6,6 @@ import java.util.Comparator;
 
 public class ProductPriceRepository extends BaseRepository<ProductPrice> {
 
-    public ProductPriceRepository() {}
-
     public ProductPrice findCurrentPrice(int productId) {
 
         return this.getStream()

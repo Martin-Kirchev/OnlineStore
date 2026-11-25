@@ -14,7 +14,7 @@ public class ProductPriceValidator extends BaseValidator<ProductPrice> {
 
         validateField("Product price productId", price.getProductId());
 
-        validateField("Product price timestamp", price.getTimestamp(), RegexList.priceTimestamp);
+        validateField("Product price timestamp", price.getTimestamp(), RegexList.timestamp);
 
         validateField("Product price", price.getPrice());
     }
