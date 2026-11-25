@@ -4,15 +4,19 @@ import util.entity.BaseEntity;
 import util.repository.BaseRepository;
 import util.validator.ValidatorManager;
 
-public abstract class BaseManager<T extends BaseEntity> {
+public abstract class BaseManager<T extends BaseEntity, R extends BaseRepository<T>> {
 
-    private final BaseRepository<T> repository;
+    private final R repository;
     private final ValidatorManager<T> validator;
 
-    public BaseManager(BaseRepository<T> repository, ValidatorManager<T> validator) {
+    public BaseManager(R repository, ValidatorManager<T> validator) {
 
         this.repository = repository;
         this.validator = validator;
+    }
+
+    public R getRepository() {
+        return repository;
     }
 
     public void add(String className, T instance) {
