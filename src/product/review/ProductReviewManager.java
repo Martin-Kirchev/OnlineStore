@@ -7,8 +7,8 @@ import java.util.LinkedList;
 
 public class ProductReviewManager extends BaseManager<ProductReview, ProductReviewRepository> {
 
-    public ProductReviewManager(ProductReviewRepository repository, ValidatorManager<ProductReview> validator) {
-        super(repository, validator);
+    public ProductReviewManager() {
+        super(new ProductReviewRepository(), new ValidatorManager<>(new ProductReviewValidator()));
     }
 
     public LinkedList<ProductReview> getUserReviews(int userId) {

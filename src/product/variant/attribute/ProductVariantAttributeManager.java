@@ -5,8 +5,8 @@ import util.validator.ValidatorManager;
 
 public class ProductVariantAttributeManager extends NamedManager<ProductVariantAttribute, ProductVariantAttributeRepository> {
 
-    public ProductVariantAttributeManager(ProductVariantAttributeRepository repository, ValidatorManager<ProductVariantAttribute> validator) {
-        super(repository, validator);
+    public ProductVariantAttributeManager() {
+        super(new ProductVariantAttributeRepository(), new ValidatorManager<>(new ProductVariantAttributeValidator()));
     }
 
 }

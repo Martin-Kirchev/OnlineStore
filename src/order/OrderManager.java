@@ -7,8 +7,8 @@ import java.util.LinkedList;
 
 public class OrderManager extends BaseManager<Order, OrderRepository> {
 
-    public OrderManager(OrderRepository repository, ValidatorManager<Order> validator) {
-        super(repository, validator);
+    public OrderManager() {
+        super(new OrderRepository(), new ValidatorManager<>(new OrderValidator()));
     }
 
     public LinkedList<Order> getUserOrders(int userId) {

@@ -5,8 +5,8 @@ import util.validator.ValidatorManager;
 
 public class PaymentManager extends NamedManager<Payment, PaymentRepository> {
 
-    public PaymentManager(PaymentRepository repository, ValidatorManager<Payment> validator) {
-        super(repository, validator);
+    public PaymentManager() {
+        super(new PaymentRepository(), new ValidatorManager<>(new PaymentValidator()));
     }
 
 }

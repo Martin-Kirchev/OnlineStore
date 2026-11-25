@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class RoleManager extends BaseManager<Role, RoleRepository> {
 
-    public RoleManager(RoleRepository repository) {
+    public RoleManager() {
         super(new RoleRepository(), new ValidatorManager<>(new RoleValidator()));
     }
 

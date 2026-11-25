@@ -7,8 +7,8 @@ import java.util.Set;
 
 public class CategoryManager extends NamedManager<Category, CategoryRepository> {
 
-    public CategoryManager(CategoryRepository repository, ValidatorManager<Category> validator) {
-        super(repository, validator);
+    public CategoryManager() {
+        super(new CategoryRepository(), new ValidatorManager<>(new CategoryValidator()));
     }
 
     public Set<Integer> getInnerCategories(int categoryId) {

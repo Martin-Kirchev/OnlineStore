@@ -5,8 +5,8 @@ import util.validator.ValidatorManager;
 
 public class ProductPriceManager extends BaseManager<ProductPrice, ProductPriceRepository> {
 
-    public ProductPriceManager(ProductPriceRepository repository, ValidatorManager<ProductPrice> validator) {
-        super(repository, validator);
+    public ProductPriceManager() {
+        super(new ProductPriceRepository(), new ValidatorManager<>(new ProductPriceValidator()));
     }
 
     public ProductPrice getCurrentPrice(int productId) {

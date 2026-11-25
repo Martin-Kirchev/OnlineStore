@@ -7,8 +7,8 @@ import java.util.LinkedList;
 
 public class ProductVariantManager extends BaseManager<ProductVariant, ProductVariantRepository> {
 
-    public ProductVariantManager(ProductVariantRepository repository, ValidatorManager<ProductVariant> validator) {
-        super(repository, validator);
+    public ProductVariantManager() {
+        super(new ProductVariantRepository(), new ValidatorManager<>(new ProductVariantValidator()));
     }
 
     public LinkedList<ProductVariant> getVariants(int productId) {
