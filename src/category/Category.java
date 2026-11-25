@@ -7,8 +7,8 @@ import java.util.Set;
 
 public class Category extends NamedEntity {
 
-    private Set<Integer> innerCategoryIDs;
-    private Set<Integer> productIDs;
+    private final Set<Integer> innerCategoryIDs;
+    private final Set<Integer> productIDs;
 
     public Category(int id, String name) {
 
@@ -16,6 +16,14 @@ public class Category extends NamedEntity {
         this.setName(name);
         this.innerCategoryIDs = new HashSet<>();
         this.productIDs = new HashSet<>();
+    }
+
+    public Set<Integer> getInnerCategoryIDs() {
+        return innerCategoryIDs;
+    }
+
+    public Set<Integer> getProductIDs() {
+        return productIDs;
     }
 
     public boolean addInnerCategory(int categoryID) {

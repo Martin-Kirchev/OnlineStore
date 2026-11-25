@@ -1,16 +1,18 @@
 package category;
 
-import util.repository.BaseRepository;
+import util.repository.NamedRepository;
 
-public class CategoryRepository extends BaseRepository<Category> {
+import java.util.Set;
 
-    public CategoryRepository() {}
+public class CategoryRepository extends NamedRepository<Category> {
 
-    public Category findByName(String categoryName) {
-        return this.getStream()
-                    .filter(category -> category.getName().equals(categoryName))
-                    .findFirst()
-                    .orElse(null);
+    public Set<Integer> findInnerCategories(int categoryId) {
+
+        return getStream()
+                .filter(category -> category.getId() == categoryId)
+                .map(Category::getInnerCategoryIDs)
+                .findFirst()
+                .orElse(null);
     }
 
 }
