@@ -12,11 +12,12 @@ public class User extends BaseEntity {
     private String address;
     private String email;
     private String password;
-    private Set<Integer> roleIDs;
+    private final Set<Integer> roleIDs;
 
-    public User(String lastName, String firstName,
+    public User(int id, String lastName, String firstName,
                 String password, String email, String address) {
 
+        this.setId(id);
         this.lastName = lastName;
         this.firstName = firstName;
         this.roleIDs = new HashSet<>();
