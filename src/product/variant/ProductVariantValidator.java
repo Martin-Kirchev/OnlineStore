@@ -4,7 +4,6 @@ import util.validator.BaseValidator;
 
 public class ProductVariantValidator extends BaseValidator<ProductVariant> {
 
-
     @Override
     public void validate(ProductVariant variant) {
 
