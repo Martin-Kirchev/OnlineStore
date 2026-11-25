@@ -1,9 +1,7 @@
 package product.variant.value;
 
-import util.repository.BaseRepository;
+import util.repository.NamedRepository;
 
-public class ProductVariantValueRepository extends BaseRepository<ProductVariantValue> {
-
-    public ProductVariantValueRepository() {}
+public class ProductVariantValueRepository extends NamedRepository<ProductVariantValue> {
 
 }
