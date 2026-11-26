@@ -10,10 +10,10 @@ public abstract class NamedManager<T extends NamedEntity, R extends NamedReposit
         super(repository, validator);
     }
 
-    public void checkName(String className, String name) {
+    public void checkName(T instance) {
 
-        if(this.getRepository().findByName(name) != null)
-            throw new IllegalArgumentException(String.format("%s with this name already exists!", className));
+        if(this.getRepository().findByName(instance.getName()) != null)
+            throw new IllegalArgumentException(String.format("%s with this name already exists!", instance.getClass().getSimpleName()));
     }
 
 }

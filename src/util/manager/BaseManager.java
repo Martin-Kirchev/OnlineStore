@@ -19,26 +19,26 @@ public abstract class BaseManager<T extends BaseEntity, R extends BaseRepository
         return repository;
     }
 
-    public void add(String className, T instance) {
+    public void add(T instance) {
 
         if(!repository.add(instance))
-            throw new RuntimeException(String.format("%s wasn't added to the repository!", className));
+            throw new RuntimeException(String.format("%s wasn't added to the repository!", instance.getClass().getSimpleName()));
     }
 
-    public void remove(String className, T instance) {
+    public void remove(T instance) {
 
         if(!repository.remove(instance.getId()))
-            throw new RuntimeException(String.format("%s wasn't removed to the repository!", className));
+            throw new RuntimeException(String.format("%s wasn't removed to the repository!", instance.getClass().getSimpleName()));
     }
 
     public void validate(T instance) {
         validator.validate(instance);
     }
 
-    public void checkId(String className, int id) {
+    public void checkId(T instance) {
 
-        if(repository.findById(id) != null)
-            throw new IllegalArgumentException(String.format("%s with this id already exists!", className));
+        if(repository.findById(instance.getId()) != null)
+            throw new IllegalArgumentException(String.format("%s with this id already exists!", instance.getClass().getSimpleName()));
     }
 
 }
